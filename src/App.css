@@ -9,6 +9,14 @@
   letter-spacing: 0.5px;
 }
 
+/* 🔹 Logo */
+.brand-text img {
+  width: 50px;          /* 👈 tamaño equilibrado */
+  height: 50px;
+  margin-right: 10px;
+}
+
+
 .nav-link-custom {
   color: #e2e8f0 !important;
   font-weight: 500;
@@ -277,3 +285,14 @@ form label {
   background: linear-gradient(90deg, #1d4ed8, #2563eb, #60a5fa);
   transform: scale(1.03);
 }
+
+
+
+
+
+
+
+
+
+
+

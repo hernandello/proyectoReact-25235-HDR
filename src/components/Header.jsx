@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faUsersGear } from '@fortawesome/free-solid-svg-icons';
 import '../App.css'; 
+import logo from '../logo2.png.png';
 
 const Header = () => {
   return (
@@ -12,9 +13,9 @@ const Header = () => {
       <Container>
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center brand-text">
           <img
-            src="https://via.placeholder.com/30"
+            src={logo}
             alt="Logo"
-            className="d-inline-block align-top me-2 rounded-circle"
+            
           />
           <span>Shine - Lo mejor para vos</span>
         </Navbar.Brand>
