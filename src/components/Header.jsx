@@ -3,34 +3,39 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faUsersGear } from '@fortawesome/free-solid-svg-icons';
+import '../App.css'; 
 
 const Header = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="mb-4">
-      <Container>       
-        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
+    <Navbar expand="lg" className="custom-navbar mb-4 shadow-sm">
+      <Container>
+        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center brand-text">
           <img
-            src="https://via.placeholder.com/25" 
+            src="https://via.placeholder.com/30"
             alt="Logo"
-            className="d-inline-block align-top me-2"
+            className="d-inline-block align-top me-2 rounded-circle"
           />
-          <span>Todo por 2 pesos - Lo mejor de Capussoto</span>
+          <span>Shine - Lo mejor para vos</span>
         </Navbar.Brand>
 
-        <Nav className="ms-auto align-items-center">
-          <Nav.Link as={Link} to="/" className="me-3">Home</Nav.Link>
-          <Nav.Link as={Link} to="/ofertas" className="me-3">Ofertas</Nav.Link>
-          <Nav.Link as={Link} to="/infaltables" className="me-3">Infaltables</Nav.Link>
+        <Navbar.Toggle aria-controls="navbar-nav" />
+        <Navbar.Collapse id="navbar-nav">
+          <Nav className="ms-auto align-items-center">
+            <Nav.Link as={Link} to="/" className="nav-link-custom">Home</Nav.Link>
+            <Nav.Link as={Link} to="/ofertas" className="nav-link-custom">Ofertas</Nav.Link>
+            <Nav.Link as={Link} to="/destacados" className="nav-link-custom">Destacados</Nav.Link>
 
-          <div className="d-flex align-items-center">
-            <Button variant="outline-light" as={Link} to="/administracion" className="me-2">
-              Administración
-            </Button>
-            <Link to="/carrito" className="text-white">
-              <FontAwesomeIcon icon={faShoppingCart} size="lg" />
-            </Link>
-          </div>
-        </Nav>
+            <div className="d-flex align-items-center ms-3">
+              <Button as={Link} to="/administracion" className="admin-btn me-2">
+                <FontAwesomeIcon icon={faUsersGear} size="lg" />
+              </Button>
+              <Link to="/carrito" className="cart-icon">
+                <FontAwesomeIcon icon={faShoppingCart} size="lg" />
+              </Link>
+            </div>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

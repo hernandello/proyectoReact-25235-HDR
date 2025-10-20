@@ -1,31 +1,39 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
+import '../App.css';
 
 const ProductCard = ({ product, agregarAlCarrito }) => {
   return (
+    <Card className="product-card h-100 shadow-sm">
+      <div className="image-container">
+        <Card.Img
+          variant="top"
+          src={product.image}
+          alt={product.title}
+          className="product-image"
+        />
+      </div>
 
-      // Armo la cards
-    <Card className="h-100 d-flex flex-column">
-      <Card.Img
-        variant="top"
-        src={product.image}
-        alt={product.title}
-        className="card-img-top img-fluid" 
-        style={{ height: '200px', objectFit: 'cover' }} 
-      />
+      <Card.Body className="product-body">
+        <div className="product-content">
+          <Card.Title className="product-title">{product.title}</Card.Title>
+          <Card.Text className="product-description">
+            {product.description.slice(0, 100)}...
+          </Card.Text>
+        </div>
 
-      
-      <Card.Body className="d-flex flex-column">
-        <Card.Title>{product.title}</Card.Title>
-        <Card.Text>
-          {product.description.slice(0, 100)}...
-        </Card.Text>
-        <Card.Text>
-          <strong>${product.price}</strong>
-        </Card.Text>
-        <Button variant="primary" onClick={() => agregarAlCarrito(product)}>
-          Agregar al carrito
-        </Button>
+        <div className="product-footer">
+          <Card.Text className="product-price">
+            <strong>${product.price}</strong>
+          </Card.Text>
+          <Button
+            variant="primary"
+            onClick={() => agregarAlCarrito(product)}
+            className="add-to-cart-btn w-100"
+          >
+            Agregar al carrito
+          </Button>
+        </div>
       </Card.Body>
     </Card>
   );
