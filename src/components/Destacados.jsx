@@ -10,7 +10,7 @@ const Destacados = () => {
         </h1>
 
         <div className="home-content p-4 rounded-4 shadow-sm">
-          <ProductList category="electronics" />
+          <ProductList category="beauty" />
         </div>
       </div>
     </div>

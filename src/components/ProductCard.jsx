@@ -8,7 +8,7 @@ const ProductCard = ({ product, agregarAlCarrito }) => {
       <div className="image-container">
         <Card.Img
           variant="top"
-          src={product.image}
+          src={product.images}
           alt={product.title}
           className="product-image"
         />

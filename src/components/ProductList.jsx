@@ -10,16 +10,16 @@ const ProductList = ({ category = null }) =>
 
     useEffect(() => 
     {
-    let url = 'https://fakestoreapi.com/products';
+    let url = 'https://dummyjson.com/products';
     if (category) 
     {
-      url = `https://fakestoreapi.com/products/category/${category}`;
+      url = `https://dummyjson.com/products/category/${category}`;
     }
 
       fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        setProducts(data);
+        setProducts(data.products || []);
         setLoading(false);
       })
       .catch((error) => {

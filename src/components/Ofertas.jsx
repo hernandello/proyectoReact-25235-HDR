@@ -11,7 +11,7 @@ const Ofertas = () => {
         </h1>
 
         <div className="home-content p-4 rounded-4 shadow-sm">
-          <ProductList category="women's clothing" />
+          <ProductList category="groceries" />
         </div>
       </div>
     </div>
